@@ -1,7 +1,7 @@
 <?php
     $nombre1 = 'Luis';
     $nombre2 = 'Maria';
-    echo "$nombre1, $nombre2";
+    echo "$nombre1 $nombre2";
     echo "<br></br>";
 
     //el nombre de las variables diferencia mayùsculas de minùsculas
