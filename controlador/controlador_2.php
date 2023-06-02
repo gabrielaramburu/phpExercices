@@ -1,37 +1,36 @@
 <?php
 // Datos de ejemplo para simular la búsqueda
-$datos = [
-    "PHP",
-    "JavaScript",
-    "HTML",
-    "CSS",
-    "Python",
-    "Java",
-    "Ruby",
-    "C#"
+$personas = [
+    "Gabriel",
+    "Maria",
+    "Jose",
+    "Carlos",
+    "Juan",
+    "Andrea"
 ];
 
-if (isset($_GET['nombre'])) {
+if (isset($_GET['persona'])) {
     
-    $consulta = filter_var($_GET['nombre'], FILTER_SANITIZE_STRING);
+    $personaABuscar = $_GET['persona'];
 
-    // Mostrar la consulta de búsqueda
-    echo "<h2>Resultados de búsqueda para: " . htmlspecialchars($consulta) . "</h2>";
+    echo "<h2>Resultados de búsqueda para: " .
+     htmlspecialchars($personaABuscar) . "</h2>";
 
-    // Realizar la búsqueda en el array de datos y mostrar los resultados
-    $resultados = array_filter($datos, function($item) use ($consulta) {
-        return stripos($item, $consulta) !== false;
-    });
-
-    if (count($resultados) > 0) {
-        echo "<ul>";
-        foreach ($resultados as $resultado) {
-            echo "<li>" . htmlspecialchars($resultado) . "</li>";
+    $encontrado = false; 
+    foreach ($personas as $persona) {
+        echo "<li>" . htmlspecialchars($persona) . "</li>";
+        if (stripos($persona, $personaABuscar)) {
+            echo "<ul>";
+            echo "<li>" . htmlspecialchars($persona) . "</li>";
+            echo "</ul>";
+            $encontrado = TRUE;
         }
-        echo "</ul>";
-    } else {
-        echo "<p>No se encontraron resultados para su búsqueda.</p>";
     }
+    
+    if ($encontrado != TRUE) {    
+        echo "<p>No se encontraron resultados para su búsqueda.</p>";
+    
+    } 
 } else {
     echo "<p>Por favor, ingrese una consulta de búsqueda en el formulario.</p>";
 }
