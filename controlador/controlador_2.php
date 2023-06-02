@@ -18,12 +18,12 @@ if (isset($_GET['persona'])) {
 
     $encontrado = false; 
     foreach ($personas as $persona) {
-        echo "<li>" . htmlspecialchars($persona) . "</li>";
-        if (stripos($persona, $personaABuscar)) {
+        if (strtoupper($persona) == strtoupper($personaABuscar)) {
             echo "<ul>";
-            echo "<li>" . htmlspecialchars($persona) . "</li>";
+            echo "<li> Bienvenido " . htmlspecialchars($persona) ." </li>";
             echo "</ul>";
             $encontrado = TRUE;
+            break;
         }
     }
     
