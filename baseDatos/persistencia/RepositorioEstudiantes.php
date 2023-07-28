@@ -26,6 +26,16 @@
             }
             return $estudiantes;
         }
+
+        public function guardarEstudiante() {
+
+        }
+
+        public function borrarEstudiante($id) {
+            $sql = "DELETE from estudiantes where id = ?";
+            $stmt= $this->pdo->prepare($sql);
+            $stmt->execute([$id]);
+        }
       
     }
 

@@ -38,5 +38,10 @@
             $repoEst = new RepositorioEstudiante();
             return $repoEst->obtenerEstudiantes(); 
         }
+
+        public static function borrarEstudiante($id) {
+            $repoEst = new RepositorioEstudiante();
+            return $repoEst->borrarEstudiante($id);
+        }
     }
 ?>
