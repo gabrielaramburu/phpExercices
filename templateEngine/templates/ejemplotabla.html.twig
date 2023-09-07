@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1> Esto es un ejemplo de como mostrar una tabla con un engine template </h1>
+    
+    <table>
+    <tr>
+        <th>id</th>
+        <th>descripcion</th>
+        <th>importe</th>
+    <tr>
+    
+    {% for pre in presupuestos %}
+        <tr>
+            <td>{{ pre.id }}</td>
+            <td>{{ pre.descripcion }}</td>
+            <td>{{ pre.importe }}</td>
+        </tr>
+    {% endfor %}
+ </table>
+
+</body>
+
+</html>
