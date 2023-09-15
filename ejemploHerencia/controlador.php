@@ -8,6 +8,9 @@ $profesor = new Profesor(1, 'prof1','1234','Jose','jose@gmail.com');
 
 echo $profesor->saludar(); //este método tambien lo hereda del padre
 
+//este método es particular del profesor
+$profesor->pasarLista(array('Luis','Jose','Juliana'));
+
 
 echo "<br>";
 
