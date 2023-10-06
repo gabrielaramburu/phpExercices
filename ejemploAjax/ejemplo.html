@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head >
+
+	<meta charset="ISO-8859-1">
+
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    
+	<script>
+        function buscarInformacion() {
+            var url = '/ejemplos_php/ejemploAjax/controlador.php';
+            $("#resultado-invocacion").load(url); //llamada ajax
+            
+        }
+    </script>
+
+</head>
+
+
+<header>
+</header>
+
+<body>
+    <div>
+        <div>
+            <textarea  rows="4" cols="50">
+                Texto para escribir algo.
+            </textarea>
+
+        </div>
+    </div>
+
+		<div>
+            <button onclick="buscarInformacion()">Hacer click para invocar servidor</button> 
+
+			<div id="resultado-invocacion">
+				<!-- Esta parte se carga cuando el usuario hace click en el boton filtrar -->
+
+			</div>
+            
+		</div>
+	
+</body>
+
+
+</html>

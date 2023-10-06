@@ -30,6 +30,16 @@
 
             $pdo=null;
         }
+        
+        public function obtenerUsuario($id) {
+        
+            $stmt = $this->pdo->prepare("SELECT * FROM users WHERE id=?");
+            $stmt->execute([$id]); 
+            $user = $stmt->fetch();
+
+            return $user;
+
+        }
 
         public function guardarEstudiantes($id, $nom, $ape, $fechaN, $email, $imagen) {
             $sql = "INSERT INTO estudiantes(id, nombre, apellido, fechaNac, email, imagen) " .
