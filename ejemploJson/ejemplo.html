@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head >
+
+	<meta charset="ISO-8859-1">
+
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+    
+	<script>
+        function buscarInformacionEjemplo1() {
+            var url = '/ejemplos_php/ejemploJson/controlador.php?tipo=1';
+            $("#resultado-invocacion").load(url); //llamada ajax
+            
+        }
+        function buscarInformacionEjemplo2() {
+            var url = '/ejemplos_php/ejemploJson/controlador.php?tipo=2';
+            $("#resultado-invocacion").load(url); //llamada ajax
+            
+        }
+
+        function buscarInformacionEjemplo3() {
+            var url = '/ejemplos_php/ejemploJson/controlador.php?tipo=3';
+            $("#resultado-invocacion").load(url); //llamada ajax
+            
+        }
+
+        function buscarInformacionEjemplo4() {
+            var url = '/ejemplos_php/ejemploJson/controlador.php?tipo=4';
+            $.get(url, function(resultado) {
+                var chart = new CanvasJS.Chart("chartContainer", JSON.parse(resultado));
+                chart.render();
+            }); 
+
+            
+            
+        }
+    </script>
+
+</head>
+
+
+<header>
+</header>
+
+<body>
+    <div>
+        <div>
+           
+        </div>
+    </div>
+
+		<div>
+            <button onclick="buscarInformacionEjemplo1()">Ejemplo JSON que representa un array</button> 
+            <br>
+            <button onclick="buscarInformacionEjemplo2()">Ejemplo JSON que representa varios valores </button> 
+            <br>
+            <button onclick="buscarInformacionEjemplo3()">Ejemplo JSON que representa un objeto </button> 
+
+            <br>
+            <button onclick="buscarInformacionEjemplo4()">Crear gráfica </button> 
+
+			<div id="resultado-invocacion">
+				<!-- Esta parte se carga cuando el usuario hace click en el boton filtrar -->
+
+			</div>
+            
+            <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+            
+		</div>
+	
+</body>
+
+
+</html>
