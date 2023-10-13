@@ -23,7 +23,7 @@ if ($ejemplo == 4) {
     //tengo que investigar como trabaja en js que realiza las gráficas
     //https://canvasjs.com/javascript-charts/chart-index-data-label/
     //en base a eso construyo el JSON que corresponda.
-    //observese como los valores que representan las barras se obtienen el azar
+    //observese como los valores que representan las barras se obtienen el azartermi
 
     $datosGrafica  = array (
         'animationEnabled' => true,
