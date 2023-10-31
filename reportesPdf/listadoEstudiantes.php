@@ -39,7 +39,7 @@ class listadoEstudiantes extends FPDF {
         $this->Cell(0,10,'Página ' . 
             $this->PageNo() . '/{nb}',0,0,'C');
     }
-    // header Attributes
+    // encabezados
     function headerAttributes() {
         $this->SetFont('Times','B', 10);
         $this->Cell(30,10,'Nombre',1,0,'C');
