@@ -1,6 +1,8 @@
 <?php
 	
 require('./fpdf186/fpdf.php');
+require('./Usuario.php');
+
 class listadoEstudiantes extends FPDF {
   
     
@@ -50,9 +52,14 @@ class listadoEstudiantes extends FPDF {
     }
 
     function datos() {
-        $personas = array ('Juan', 'Luis','Maria','Andrea');
+        $personas = array (
+            new Usuario('Juan', 'Lopez','18 de Julio 123', 'juan@gmail.com'),
+            new Usuario('Luis', 'Rodriguez','Sarandi 455', 'juan@gmail.com'));
         foreach ($personas as $persona) {
-            $this->Cell(30,10,$persona,1,0,'C');
+            $this->Cell(30,10,$persona->getNombre(),1,0,'C');
+            $this->Cell(45,10,$persona->getApellido(),1,0,'C');
+            $this->Cell(60,10,$persona->getDireccion(),1,0,'C');
+            $this->Cell(40,10,$persona->getEmail(),1,0,'C');
             $this->Ln();
         }
     }
